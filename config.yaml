@@ -1,0 +1,71 @@
+dataset: qstaxi
+distance_type: TP
+cuda: 2
+
+shuffle_node_file: ./data/qstaxi/traj/shuffle_node_list.npy
+shuffle_time_file: ./data/qstaxi/traj/shuffle_time_list.npy
+shuffle_d2vec_file: ./data/qstaxi/traj/shuffle_d2vec_list.npy
+shuffle_coor_file: ./data/qstaxi/traj/shuffle_coor_list.npy
+shuffle_kseg_file: ./data/qstaxi/traj/shuffle_kseg_list.npy
+shuffle_speed_file: ./data/qstaxi/traj/shuffle_speed_list.npy
+kseg: 5
+
+path_node_triplets: ./data/qstaxi/triplet/TP/node_triplets_2w_STBall
+path_time_triplets: ./data/qstaxi/triplet/TP/time_triplets_2w_STBall
+path_d2vec_triplets: ./data/qstaxi/triplet/TP/d2vec_triplets_2w_STBall
+path_speed_triplets: ./data/qstaxi/triplet/TP/speed_triplets_2w_STBall
+
+path_triplets_truth: ./ground_truth/qstaxi/TP/train_triplet_2w_STBall.npy
+path_vali_truth: ./ground_truth/qstaxi/TP/vali_st_distance.npy
+path_test_truth: ./ground_truth/qstaxi/TP/test_st_distance.npy
+path_train_truth: ./ground_truth/qstaxi/TP/train_st_distance.npy
+
+pseudo_labels: ./data/qstaxi/pseudo_labels
+cluster_vali_truth: ./ground_truth/qstaxi/TP/vali_cluster.npy
+cluster_test_truth: ./ground_truth/qstaxi/TP/test_cluster.npy
+cluster_train_truth: ./ground_truth/qstaxi/TP/train_cluster.npy
+
+pointnum:  # The number of nodes in the network
+  qstaxi: 81000
+  tdrive: 75000
+
+feature_size: 64   # node2vec feature size
+embedding_size: 64 # embedding size
+date2vec_size: 64 # date2vec ouTPut size
+
+epochs: 200
+train_batch: 50
+test_batch: 500
+early_stop: 25
+learning_rate: 0.001
+weight_decay: 0.00001
+
+# Characteristics considered. 1 represents considering, 0 represents not considering
+space: 1
+time: 1
+speed: 1
+
+cluster:
+  epochs: 200
+  train_batch: 100
+  early_stop: 20
+  
+  learning_rate: 0.000005
+  weight_decay: 0
+
+  classifier_rate: 0.01
+  classifier_weight_decay: 0
+  classifier_train: 1  # Classifier training rounds
+  
+  a: 0.5  # The importance of deep clustering loss, the greater the importance
+  k: 12  # The k-value of kmeans
+
+transformer:
+  nhead: 4
+  num_layers: 4
+  dropout: 0
+  dim_feedforward: 512
+
+# Number of participants in training
+client_server:
+  client_num: 2

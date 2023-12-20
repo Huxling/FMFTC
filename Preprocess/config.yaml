@@ -1,0 +1,41 @@
+dataset: qstaxi
+distance_type: TP
+cuda: 2
+
+traj_file: ../data/qstaxi/traj/space_list.csv
+time_file: ../data/qstaxi/traj/time_list.csv
+speed_file: ../data/qstaxi/traj/speed_list.csv
+
+shuffle_node_file: ../data/qstaxi/traj/shuffle_node_list.npy
+shuffle_time_file: ../data/qstaxi/traj/shuffle_time_list.npy
+shuffle_d2vec_file: ../data/qstaxi/traj/shuffle_d2vec_list.npy
+shuffle_coor_file: ../data/qstaxi/traj/shuffle_coor_list.npy
+shuffle_kseg_file: ../data/qstaxi/traj/shuffle_kseg_list.npy
+shuffle_speed_file: ../data/qstaxi/traj/shuffle_speed_list.npy
+kseg: 5
+
+path_triplets_truth: ../ground_truth/qstaxi/TP/train_triplet_2w_STBall.npy
+path_vali_truth: ../ground_truth/qstaxi/TP/vali_st_distance.npy
+path_test_truth: ../ground_truth/qstaxi/TP/test_st_distance.npy
+path_train_truth: ../ground_truth/qstaxi/TP/train_st_distance.npy
+
+pseudo_labels: ../data/qstaxi/pseudo_labels
+cluster_vali_truth: ../ground_truth/qstaxi/TP/vali_cluster.npy
+cluster_test_truth: ../ground_truth/qstaxi/TP/test_cluster.npy
+cluster_train_truth: ../ground_truth/qstaxi/TP/train_cluster.npy
+
+pointnum:  # The number of nodes in the network
+  qstaxi: 81000
+  tdrive: 75000
+feature_size: 64 
+
+node2vec:
+  walk_length: 20
+  context_size: 10
+  walks_per_node: 10
+  num_neg_samples: 1
+  p: 1
+  q: 1
+
+cluster:
+  k: 12
