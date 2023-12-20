@@ -21,15 +21,16 @@ Please refer to the source code to install all required packages in Python.
 The preprocessing step will generate all data required in the training stage.
 
 For the qstaxi dataset, you can do as follows.
-    ```shell
-    $ cd Preprocess
-    $ python preprocess.py
-    $ python spatial_similarity.py
-    $ python speed_similarity.py
-    $ python temporal_similarity.py
-    $ python merge_STD_similarity.py
-    $ cd ..
-    ```
+
+```shell
+cd Preprocess
+python preprocess.py
+python spatial_similarity.py
+python speed_similarity.py
+python temporal_similarity.py
+python merge_STD_similarity.py
+cd ..
+```
 
 ## Train
 
