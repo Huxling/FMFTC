@@ -1,7 +1,4 @@
 # FMFTC
-<<<<<<< HEAD
-Federated Multi Feature Trajectory Clustering
-=======
 
 This repository contains the code used in our paper: FMFTC: Federated Multi Feature Trajectory Clustering
 
@@ -44,4 +41,3 @@ python main.py
 2. The training produces two model `coordinator_checkpoint.pkl`, `participant_checkpoint.pkl` and `coordinator_NMI_BEST.pkl`, `participant_NMI_BEST.pkl`. `checkpoint` contains the latest trained model and `NMI_BEST` saves the model which has the best performance on the validation data. 
 
 Some code comes from [ST2vec](https://github.com/zealscott/ST2Vec).
->>>>>>> ead505f (init)
