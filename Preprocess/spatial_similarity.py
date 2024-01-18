@@ -45,9 +45,7 @@ def find_maximal_cliques(G):
     cliques = [clique for clique in nx.find_cliques(G) if len(clique) == max_clique_size]
     return cliques
 def parallel_point_com(i, id_list = []):
-    """
-    计算道路网络中所有点之间的最短距离，无法到达则为-1
-    """
+
     batch_list = []
 
     for k in id_list:
@@ -71,10 +69,7 @@ def parallel_point_com(i, id_list = []):
     np.save('../ground_truth/{}/Point_dis_matrix_{}.npy'.format(dataset, str(i)), batch_list)
 
 def batch_Point_distance():
-    """
-    以1000为一组用pool池同时批量处理
-    计算道路网络中所有点之间的最短距离，无法到达则为-1
-    """
+
     pool = Pool(processes=20)
     for i in range(dataset_point + 1):
         if i != 0 and i % 1000 == 0:
