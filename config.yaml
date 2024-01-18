@@ -40,7 +40,7 @@ early_stop: 25
 learning_rate: 0.001
 weight_decay: 0.00001
 
-# Characteristics considered. 1 represents considering, 0 represents not considering
+# Features considered. 1 represents considering, 0 represents not considering
 space: 1
 time: 1
 speed: 1
