@@ -48,16 +48,16 @@ speed: 1
 cluster:
   epochs: 200
   train_batch: 100
-  early_stop: 10
+  early_stop: 31
   
-  learning_rate: 0.000005
+  learning_rate: 0.000002
   weight_decay: 0
 
   classifier_rate: 0.01
   classifier_weight_decay: 0
   classifier_train: 1  # Classifier training rounds
   
-  a: 0.5  # The importance of deep clustering loss, the greater the importance
+  a: 0.1  # The importance of deep clustering loss, the greater the importance
   k: 12  # The k-value of kmeans
 
 transformer:
